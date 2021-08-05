@@ -1,4 +1,13 @@
-<h3>Register Form</h3>
-<form action="" method="POST">
-    {% csrf_token %} {{form.as_p}} <input type="submit" value="Register">
-</form>
+{% extends 'base.html' %} {% block content %}
+<div class="header-bar">
+    <h3>Create An Account</h3>
+</div>
+<div class="card-body">
+    <form action="" method="POST">
+        {% csrf_token %} <label>{{form.username.label}}{{form.username}}</label>
+        <label>{{form.password1.label}}{{form.password1}}</label>
+        <label>{{form.password2.label}}{{form.password2}}</label><input type="submit" value="Register">
+        <p style="margin-left:10px;"><a href="{% url 'login' %}">Have an Account ?</a>
+        </p>
+    </form>
+</div>{% endblock content %}

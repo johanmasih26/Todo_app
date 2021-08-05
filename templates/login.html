@@ -1,6 +1,15 @@
-<h3>login page:</h3>
-<form action="" method="POST">
-    {% csrf_token %}{{form.as_p}}
-    <input type="submit" value="Login">
-</form>
-<a href="{% url 'register' %}">No account</a>
+{% extends "base.html" %} {% block content %}
+<div class="header-bar">
+    <h3 style="margin: auto;">Todo Login Form</h3>
+</div>
+<div class="card-body">
+
+    <form action="" method="POST">
+        {% csrf_token %}{{form.as_p}}
+        <input type="submit" value="Login" style="margin-left:2px !important;">
+    </form>
+
+    <p>
+        <a href="{% url 'register' %}" style="margin-left:5px;">Register Here</a>
+    </p>
+</div>{% endblock content %}}
